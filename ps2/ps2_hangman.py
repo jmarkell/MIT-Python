@@ -148,10 +148,12 @@ game_over = False
 while game_over != True:
 	hangman()
 	choice = raw_input("Would you like to play again? (Enter [Y]es or [N]o)")
-	if choice.lower() == 'n' or choice.lower() == 'no':
+	if (choice.lower() == 'n' or choice.lower() == 'no'):
 		print "Goodbye!"
 		game_over = True
-	elif choice.lower() != 'y' or choice.lower() == 'yes':
+	elif choice.lower().strip() == 'y' or choice.lower().strip() == 'yes':
+		continue
+	else:	
 		print "That was not a choice. Oh well, goodbye!"
 		game_over = True
 
